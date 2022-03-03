@@ -1,0 +1,35 @@
+﻿@model Student
+
+<form method="post" asp-action="Edit">
+	<input asp-for="Student_Id" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Edit Student Details</h2>
+			<hr />
+			<div asp-validation-summary="All"></div>
+			<div class="mb-3">
+				<label asp-for="Student_Name" style="font-weight:bold;text-transform:uppercase"></label>
+				<input asp-for="Student_Name" class="form-control" />
+				<span asp-validation-for="Student_Name" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="Student_Department" style="font-weight:bold;text-transform:uppercase"></label>
+				<input asp-for="Student_Department" class="form-control" />
+				<span asp-validation-for="Student_Department" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="Year" style="font-weight:bold;text-transform:uppercase"></label>
+				<input asp-for="Year" class="form-control" />
+				<span asp-validation-for="Year" class="text-danger"></span>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-success" style="width:150px">Update</button>
+		<a asp-controller="Student" asp-action="Index" class="btn btn-warning" style="width:150px">Back</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial"/>
+	}
+}
